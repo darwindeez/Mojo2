@@ -1,11 +1,11 @@
 /*
-*	File:		Density.cpp
+*	File:		Mojo2.cpp
 *	
 *	Version:	1.0
 * 
 *	Created:	1/24/07
 *	
-*	Copyright:  Copyright © 2007 Airwindows, All Rights Reserved
+*	Copyright:  Copyright Â© 2007 Airwindows, All Rights Reserved
 * 
 *	Disclaimer:	IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc. ("Apple") in 
 *				consideration of your agreement to the following terms, and your use, installation, modification 
@@ -40,21 +40,21 @@
 *
 */
 /*=============================================================================
-	Density.h
+	Mojo2.h
 	
 =============================================================================*/
-#include "Density.h"
+#include "Mojo2.h"
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-COMPONENT_ENTRY(Density)
+COMPONENT_ENTRY(Mojo2)
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::Density
+//	Mojo2::Mojo2
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Density::Density(AudioUnit component)
+Mojo2::Mojo2(AudioUnit component)
 	: AUEffectBase(component)
 {
 	CreateElements();
@@ -72,9 +72,9 @@ Density::Density(AudioUnit component)
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::GetParameterValueStrings
+//	Mojo2::GetParameterValueStrings
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ComponentResult		Density::GetParameterValueStrings(AudioUnitScope		inScope,
+ComponentResult		Mojo2::GetParameterValueStrings(AudioUnitScope		inScope,
                                                                 AudioUnitParameterID	inParameterID,
                                                                 CFArrayRef *		outStrings)
 {
@@ -85,9 +85,9 @@ ComponentResult		Density::GetParameterValueStrings(AudioUnitScope		inScope,
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::GetParameterInfo
+//	Mojo2::GetParameterInfo
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ComponentResult		Density::GetParameterInfo(AudioUnitScope		inScope,
+ComponentResult		Mojo2::GetParameterInfo(AudioUnitScope		inScope,
                                                         AudioUnitParameterID	inParameterID,
                                                         AudioUnitParameterInfo	&outParameterInfo )
 {
@@ -141,9 +141,9 @@ ComponentResult		Density::GetParameterInfo(AudioUnitScope		inScope,
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::GetPropertyInfo
+//	Mojo2::GetPropertyInfo
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ComponentResult		Density::GetPropertyInfo (AudioUnitPropertyID	inID,
+ComponentResult		Mojo2::GetPropertyInfo (AudioUnitPropertyID	inID,
                                                         AudioUnitScope		inScope,
                                                         AudioUnitElement	inElement,
                                                         UInt32 &		outDataSize,
@@ -153,9 +153,9 @@ ComponentResult		Density::GetPropertyInfo (AudioUnitPropertyID	inID,
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::GetProperty
+//	Mojo2::GetProperty
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ComponentResult		Density::GetProperty(	AudioUnitPropertyID inID,
+ComponentResult		Mojo2::GetProperty(	AudioUnitPropertyID inID,
                                                         AudioUnitScope 		inScope,
                                                         AudioUnitElement 	inElement,
                                                         void *			outData )
@@ -164,9 +164,9 @@ ComponentResult		Density::GetProperty(	AudioUnitPropertyID inID,
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::Initialize
+//	Mojo2::Initialize
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-ComponentResult Density::Initialize()
+ComponentResult Mojo2::Initialize()
 {
     ComponentResult result = AUEffectBase::Initialize();
     if (result == noErr)
@@ -174,13 +174,13 @@ ComponentResult Density::Initialize()
     return result;
 }
 
-#pragma mark ____DensityEffectKernel
+#pragma mark ____Mojo2EffectKernel
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::DensityKernel::Reset()
+//	Mojo2::Mojo2Kernel::Reset()
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-void		Density::DensityKernel::Reset()
+void		Mojo2::Mojo2Kernel::Reset()
 {
 	iirSampleA = 0.0;
 	iirSampleB = 0.0;
@@ -190,9 +190,9 @@ void		Density::DensityKernel::Reset()
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	Density::DensityKernel::Process
+//	Mojo2::Mojo2Kernel::Process
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-void		Density::DensityKernel::Process(	const Float32 	*inSourceP,
+void		Mojo2::Mojo2Kernel::Process(	const Float32 	*inSourceP,
                                                     Float32		 	*inDestP,
                                                     UInt32 			inFramesToProcess,
                                                     UInt32			inNumChannels, // for version 2 AudioUnits inNumChannels is always 1
