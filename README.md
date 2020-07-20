@@ -5,6 +5,8 @@ I just wanted a version of Mojo with an internal highpass like Density/Drive. He
 
 I added the "gain" variable and the mojo function into Density. 
 
+I removed bridgerectifier, et al.
+
 I replaced all instances of the word "Density" with "Mojo2" throughout the codebase. 
 
 I set the range of parameter1 ('Mojo') to be -12.0 to 12.0, like it is in Mojo. 
