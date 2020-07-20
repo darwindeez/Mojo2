@@ -5,7 +5,7 @@
 * 
 *	Created:	1/24/07
 *	
-*	Copyright:  Copyright © 2007 Airwindows, All Rights Reserved
+*	Copyright:  Copyright Â© 2007 Airwindows, All Rights Reserved
 * 
 *	Disclaimer:	IMPORTANT:  This Apple software is supplied to you by Apple Computer, Inc. ("Apple") in 
 *				consideration of your agreement to the following terms, and your use, installation, modification 
@@ -60,7 +60,7 @@ static const float kDefaultValue_ParamThree = 1.0;
 static const float kDefaultValue_ParamFour = 1.0;
 //let's assume we always have a default of 0.0, for no effect
 
-static CFStringRef kParameterOneName = CFSTR("Mojo2");
+static CFStringRef kParameterOneName = CFSTR("Mojo");
 static CFStringRef kParameterTwoName = CFSTR("Highpass");
 static CFStringRef kParameterThreeName = CFSTR("Output Level");
 static CFStringRef kParameterFourName = CFSTR("Dry/Wet");
@@ -140,6 +140,7 @@ public:
 		Float64 iirSampleB;
 		long double fpNShape;
 		bool fpFlip;
+		uint32_t fpd;
 	};
 };
 
